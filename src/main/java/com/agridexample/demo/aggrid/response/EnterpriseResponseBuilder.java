@@ -21,7 +21,9 @@ public class EnterpriseResponseBuilder {
             Map<String, List<String>> pivotValues) {
 
         int currentLastRow = request.getStartRow() + rows.size();
-        int lastRow = currentLastRow <= request.getEndRow() ? currentLastRow : -1;
+        System.out.println(currentLastRow);
+        int lastRow = currentLastRow < request.getEndRow() ? currentLastRow : -1;
+        System.out.println(lastRow);
 
         List<ColumnVO> valueColumns = request.getValueCols();
 

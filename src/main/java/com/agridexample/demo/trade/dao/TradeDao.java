@@ -34,7 +34,8 @@ public class TradeDao {
 
     public TradeDao() {
         TradeDB tradeDB = new TradeDB();
-        this.allTrades = tradeDB.createTradeData();
+        this.allTrades = tradeDB.createTradeData().subList(0, 1000);
+        System.out.println(allTrades.size());
     }
 
     public EnterpriseGetRowsResponse getData(EnterpriseGetRowsRequest request) {
@@ -52,7 +53,12 @@ public class TradeDao {
 
         int startRow = request.getStartRow();
         int endRow = request.getEndRow();
-        List<Object> rows = this.allTrades.subList(startRow, endRow + 1);//new ArrayList<>();
+
+        if (endRow > this.allTrades.size()) {
+            endRow = this.allTrades.size();
+        }
+
+        List<Object> rows = this.allTrades.subList(startRow, endRow);//new ArrayList<>();
         System.out.println(rows.size());
 
         // create response with our results
