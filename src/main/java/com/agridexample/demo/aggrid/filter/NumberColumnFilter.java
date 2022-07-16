@@ -28,4 +28,14 @@ public class NumberColumnFilter extends ColumnFilter {
     public Integer getFilterTo() {
         return filterTo;
     }
+
+    @Override
+    public String toString() {
+        return "NumberColumnFilter{" +
+                "type='" + type + '\'' +
+                ", filter=" + filter +
+                ", filterTo=" + filterTo +
+                ", filterType='" + filterType + '\'' +
+                '}';
+    }
 }

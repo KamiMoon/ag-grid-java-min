@@ -14,4 +14,12 @@ public class SetColumnFilter extends ColumnFilter {
     public List<String> getValues() {
         return values;
     }
+
+    @Override
+    public String toString() {
+        return "SetColumnFilter{" +
+                "values=" + values +
+                ", filterType='" + filterType + '\'' +
+                '}';
+    }
 }

@@ -114,4 +114,19 @@ public class EnterpriseGetRowsRequest implements Serializable {
     public void setSortModel(List<SortModel> sortModel) {
         this.sortModel = sortModel;
     }
+
+    @Override
+    public String toString() {
+        return "EnterpriseGetRowsRequest{" +
+                "startRow=" + startRow +
+                ", endRow=" + endRow +
+                ", rowGroupCols=" + rowGroupCols +
+                ", valueCols=" + valueCols +
+                ", pivotCols=" + pivotCols +
+                ", pivotMode=" + pivotMode +
+                ", groupKeys=" + groupKeys +
+                ", filterModel=" + filterModel +
+                ", sortModel=" + sortModel +
+                '}';
+    }
 }

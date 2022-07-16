@@ -41,4 +41,13 @@ public class EnterpriseGetRowsResponse {
     public void setSecondaryColumns(List<String> secondaryColumnFields) {
         this.secondaryColumnFields = secondaryColumnFields;
     }
+
+    @Override
+    public String toString() {
+        return "EnterpriseGetRowsResponse{" +
+                "data=" + data +
+                ", lastRow=" + lastRow +
+                ", secondaryColumnFields=" + secondaryColumnFields +
+                '}';
+    }
 }
