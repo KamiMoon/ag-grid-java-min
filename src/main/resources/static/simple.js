@@ -10,33 +10,33 @@ var columnDefs = [
   // },
 
   // some string values, that do not get aggregated
-  // {
-  //   headerName: 'Attributes', children: [
-  //     {
-  //       headerName: 'Trade', field: 'TRADEID', width: 100, type: 'dimension',
-  //       filter: "agNumberColumnFilter",
-  //       filterParams: {
-  //         applyButton: true,
-  //         newRowsAction: 'keep'
-  //       }
-  //     },
-  //     {
-  //       headerName: 'Deal Type', field: 'DEALTYPE', type: 'dimension',
-  //       filter: 'agSetColumnFilter',
-  //       filterParams: {
-  //         values: ['Financial', 'Physical'],
-  //         newRowsAction: 'keep'
-  //       }
-  //     },
-  //     {
-  //       headerName: 'Bid', field: 'BIDTYPE', type: 'dimension', width: 100, filter: 'agSetColumnFilter',
-  //       filterParams: {
-  //         values: ['Buy', 'Sell'],
-  //         newRowsAction: 'keep'
-  //       }
-  //     }
-  //   ]
-  // },
+  {
+    headerName: 'Attributes', children: [
+      {
+        headerName: 'Trade', field: 'tradeId', width: 100, type: 'dimension',
+        filter: "agNumberColumnFilter",
+        filterParams: {
+          applyButton: true,
+          newRowsAction: 'keep'
+        }
+      },
+      {
+        headerName: 'Deal Type', field: 'dealType', type: 'dimension',
+        filter: 'agSetColumnFilter',
+        filterParams: {
+          values: ['Financial', 'Physical'],
+          newRowsAction: 'keep'
+        }
+      },
+      {
+        headerName: 'Bid', field: 'bidType', type: 'dimension', width: 100, filter: 'agSetColumnFilter',
+        filterParams: {
+          values: ['Buy', 'Sell'],
+          newRowsAction: 'keep'
+        }
+      }
+    ]
+  },
 
   // all the other columns (visible and not grouped)
   {

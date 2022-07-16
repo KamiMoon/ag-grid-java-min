@@ -62,7 +62,6 @@ public class TradeDao {
             String direction = firstSort.getSort();
             System.out.println("Sorting by: " + property + " " + direction);
 
-
             Comparator comp = null;
 
             if (direction.equalsIgnoreCase("asc")){
