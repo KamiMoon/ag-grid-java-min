@@ -49,7 +49,11 @@ public class TradeDao {
         // query db for rows
        //  List<Map<String, Object>> rows = template.queryForList(sql);
 
-        List<Object> rows = this.allTrades.subList(request.getStartRow(), request.getEndRow());//new ArrayList<>();
+
+        int startRow = request.getStartRow();
+        int endRow = request.getEndRow();
+        List<Object> rows = this.allTrades.subList(startRow, endRow + 1);//new ArrayList<>();
+        System.out.println(rows.size());
 
         // create response with our results
         return createResponse(request, rows, pivotValues);
