@@ -1,8 +1,8 @@
-package com.agridexample.demo.controllers;
+package com.agridexample.demo.trade.controllers;
 
 import com.agridexample.demo.aggrid.request.EnterpriseGetRowsRequest;
 import com.agridexample.demo.aggrid.response.EnterpriseGetRowsResponse;
-// import com.agridexample.demo.aggrid.dao.TradeDao;
+import  com.agridexample.demo.trade.dao.TradeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,18 +15,16 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 public class TradeController {
 
-    //private TradeDao tradeDao;
+    private TradeDao tradeDao;
 
-//    @Autowired
-//    public TradeController(@Qualifier("tradeDao") TradeDao tradeDao) {
-//        this.tradeDao = tradeDao;
-//    }
+    @Autowired
+    public TradeController(@Qualifier("tradeDao") TradeDao tradeDao) {
+        this.tradeDao = tradeDao;
+    }
 
     @RequestMapping(method = POST, value = "/getRows")
     @ResponseBody
     public EnterpriseGetRowsResponse getRows(@RequestBody EnterpriseGetRowsRequest request) {
-        // return tradeDao.getData(request);
-        System.out.println(request);
-        return new EnterpriseGetRowsResponse();
+        return tradeDao.getData(request);
     }
 }

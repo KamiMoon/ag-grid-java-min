@@ -11,7 +11,8 @@ import static java.util.Collections.emptyMap;
 
 public class EnterpriseGetRowsRequest implements Serializable {
 
-    private int startRow, endRow;
+    private int startRow;
+    private int endRow;
 
     // row group columns
     private List<ColumnVO> rowGroupCols;
