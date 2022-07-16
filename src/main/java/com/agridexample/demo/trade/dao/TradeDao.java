@@ -4,6 +4,8 @@ package com.agridexample.demo.trade.dao;
 import com.agridexample.demo.aggrid.request.ColumnVO;
 import com.agridexample.demo.aggrid.request.EnterpriseGetRowsRequest;
 import com.agridexample.demo.aggrid.response.EnterpriseGetRowsResponse;
+import com.agridexample.demo.trade.data.TradeDB;
+import com.agridexample.demo.trade.model.Trade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +30,13 @@ public class TradeDao {
 //        queryBuilder = new OracleSqlQueryBuilder();
 //    }
 
+    private List allTrades;
+
+    public TradeDao() {
+        TradeDB tradeDB = new TradeDB();
+        this.allTrades = tradeDB.createTradeData();
+    }
+
     public EnterpriseGetRowsResponse getData(EnterpriseGetRowsRequest request) {
         String tableName = "trade"; // could be supplied in request as a lookup key?
 
@@ -40,7 +49,7 @@ public class TradeDao {
         // query db for rows
        //  List<Map<String, Object>> rows = template.queryForList(sql);
 
-        List<Map<String, Object>> rows = new ArrayList<>();
+        List<Object> rows = this.allTrades.subList(request.getStartRow(), request.getEndRow());//new ArrayList<>();
 
         // create response with our results
         return createResponse(request, rows, pivotValues);

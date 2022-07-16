@@ -29,7 +29,7 @@ public class TradeDB {
     private long nextTradeId = 24287;
     private long nextBatchId = 101;
 
-    private List<Trade> createTradeData() {
+    public List<Trade> createTradeData() {
         System.out.println("Creating trade data");
         List<Trade> trades = new ArrayList<>();
         long thisBatch = nextBatchId++;

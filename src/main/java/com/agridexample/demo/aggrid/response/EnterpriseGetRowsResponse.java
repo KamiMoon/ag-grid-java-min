@@ -6,23 +6,23 @@ import java.util.List;
 import java.util.Map;
 
 public class EnterpriseGetRowsResponse {
-    private List<Map<String, Object>> data = new ArrayList<>();
+    private List<Object> data = new ArrayList<>();
     private int lastRow;
     private List<String> secondaryColumnFields;
 
     public EnterpriseGetRowsResponse() { }
 
-    public EnterpriseGetRowsResponse(List<Map<String, Object>> data, int lastRow, List<String> secondaryColumnFields) {
+    public EnterpriseGetRowsResponse(List<Object> data, int lastRow, List<String> secondaryColumnFields) {
         this.data = data;
         this.lastRow = lastRow;
         this.secondaryColumnFields = secondaryColumnFields;
     }
 
-    public List<Map<String, Object>> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<Map<String, Object>> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
 

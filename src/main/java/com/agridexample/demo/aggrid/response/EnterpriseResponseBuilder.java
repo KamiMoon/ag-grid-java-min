@@ -17,7 +17,7 @@ public class EnterpriseResponseBuilder {
 
     public static EnterpriseGetRowsResponse createResponse(
             EnterpriseGetRowsRequest request,
-            List<Map<String, Object>> rows,
+            List<Object> rows,
             Map<String, List<String>> pivotValues) {
 
         int currentLastRow = request.getStartRow() + rows.size();
