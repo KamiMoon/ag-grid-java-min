@@ -1,11 +1,12 @@
 package com.agridexample.demo.aggrid.response;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class EnterpriseGetRowsResponse {
-    private List<Map<String, Object>> data;
+    private List<Map<String, Object>> data = new ArrayList<>();
     private int lastRow;
     private List<String> secondaryColumnFields;
 
